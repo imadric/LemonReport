@@ -36,7 +36,7 @@ print('')
 accounts = int(input('How many accounts do you have/wanna report from?: '))
 print('')
 def report():
-    #chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless") #if you want browser windows visible, just comment out this line
     driver = webdriver.Chrome(options=chrome_options)
     driver.set_window_size(480, 853)
     driver.get('https://www.instagram.com/accounts/login/')
