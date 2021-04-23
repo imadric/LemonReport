@@ -7,5 +7,5 @@ print('''  _                                _____                       _
                                              | |                   
                                              |_|                   
 ===================================================================
-I want Aoi Hinami to sandwich me <3 Made with love by valentino1337
+I want Aoi Hinami to sandwich me <3  Made with love by xuehue (val)
 ===================================================================''')
