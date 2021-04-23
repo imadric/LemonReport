@@ -16,8 +16,9 @@ combospath = str(input('Enter the path to your combos file: '))
 print('')
 proxiespath = str(input('Enter the path to your proxies file: '))
 print('')
-target = input('Who do you want to mass report?: ')
+targett = input('Input the link of the post you want to report: ')
 print('')
+target = targett.split('/?')[0]
 reason = int(input('''
 Which reason do you want to report for? (sorted from the most "bannable")
 ==========================
@@ -56,16 +57,12 @@ def report():
         driver.quit()
     time.sleep(1)
     print('')
-    driver.get('https://www.instagram.com/' + target)
+    driver.get(target)
     time.sleep(2)
     driver.find_element_by_class_name('wpO6b').click()
     time.sleep(0.2)
-    driver.find_element_by_xpath('/html/body/div[4]/div/div/div/div/button[3]').click()
+    driver.find_element_by_class_name('aOOlW.-Cab_').click()
     time.sleep(1)
-    driver.find_element_by_xpath('/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[2]/div/div[1]').click()
-    time.sleep(0.5)
-    driver.find_element_by_xpath('/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[1]/div/div[1]').click()
-    time.sleep(0.7)
     if reason == 1:
         driver.find_element_by_xpath(su1cide).click()
         time.sleep(readelay)
@@ -123,10 +120,9 @@ def report():
     if reason == 7:
         driver.find_element_by_xpath(fakenews).click()
         time.sleep(delay)
-        print('Successfully reported ' + target + ' for False information')
-        time.sleep(delay)
         driver.find_element_by_xpath(socialissue).click()
         time.sleep(delay)
+        print('Successfully reported ' + target + ' for False information')
         print('')
         driver.quit()
     if reason == 8:
@@ -144,14 +140,14 @@ def report():
 
 #report xpaths
 spam = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[1]/div/div[1]' #does not need submit button
-su1cide = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[3]/div/div[1]'
-goods = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[4]/div/div[1]' #needs one of checkboxes - firearms
-sactivity = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[5]/div/div[1]' #needs one of checkboxes - cp
-speech = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[6]/div/div[1]'
-violence = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[7]/div/div[1]' #needs one of checkboxes - threat
-harassment = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[8]/div/div[1]' #needs one click (someoneyk), doesnt need submit
-scammaz = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[10]/div/div[1]' #does not need submit button
-fakenews = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[11]/div/div[1]' #does not need submit button
+su1cide = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[8]/div/div[1]'
+goods = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[5]/div/div[1]' #needs one of checkboxes - firearms
+sactivity = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[2]/div/div[1]' #needs one of checkboxes - cp
+speech = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[3]/div/div[1]'
+violence = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[4]/div/div[1]' #needs one of checkboxes - threat
+harassment = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[6]/div/div[1]' #needs one click (someoneyk), doesnt need submit
+scammaz = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[9]/div/div[1]' #does not need submit button
+fakenews = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[10]/div/div[1]' #needs one click
 firearms = '//*[@id="igCoreRadioButtontag-1"]'
 socialissue = '/html/body/div[4]/div/div/div/div[2]/div/div/div/div[3]/button[3]/div/div[1]'
 cp = '//*[@id="igCoreRadioButtontag-3"]'
